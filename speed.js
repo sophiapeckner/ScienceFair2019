@@ -5,7 +5,6 @@ const currentTime = moment().tz("America/Los_Angeles").format();
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var xhttp = new XMLHttpRequest();
 xhttp.open("GET", url, true);
-xhttp.send();
 xhttp.onreadystatechange = function(){
     if(this.readyState==4 && this.status==200){
         var ts2 = Math.round((new Date()).getTime() / 1000);
@@ -15,3 +14,4 @@ xhttp.onreadystatechange = function(){
         console.log(currentTime +','+ "Error: "+this.readyState + ' ' + this.status)
     }
 }
+xhttp.send();
